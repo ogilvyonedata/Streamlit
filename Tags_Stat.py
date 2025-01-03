@@ -51,7 +51,7 @@ if uploaded_file is not None:
             df = pd.read_excel(uploaded_file)
             
         # 顯示檔案內容預覽
-        st.write("資料預覽：（總筆數" len(df)")")
+        st.write(f"資料預覽：（總筆數 {len(df)}）")
         st.dataframe(df.head())
             
         # 讓使用者選擇標籤欄位
