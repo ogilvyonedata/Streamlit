@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 # 確保在 Windows 環境下，使用常見的中文字型（例如微軟正黑體）
 # 備註：如果 'Microsoft YaHei' 不存在，它會嘗試使用列表中的下一個字型 'SimHei'
-plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'Arial Unicode MS']
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei', 'Arial Unicode MS', 'PingFang TC', 'Heiti TC', 'Arial Unicode MS','Noto Sans CJK TC', 'SimHei', 'DejaVu Sans']
 
 # 解決 Matplotlib 負號 '-' 顯示為方塊的問題
 plt.rcParams['axes.unicode_minus'] = False
@@ -91,4 +91,5 @@ if analyze_btn and user_input and api_key:
         st.error("請檢查您的 API Key 是否正確，或帳戶是否有額度。")
 
 elif analyze_btn and not api_key:
+
     st.warning("⚠️ 請先在左側輸入 OpenAI API Key")
