@@ -1,5 +1,7 @@
 default-jre
+language-pack-zh*
 chinese*
 fonts-unfonts-core
+
 
 
