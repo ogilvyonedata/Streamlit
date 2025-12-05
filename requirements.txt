@@ -4,3 +4,4 @@ openpyxl
 seaborn
 openai
 scikit-learn
+sentence_transformers
