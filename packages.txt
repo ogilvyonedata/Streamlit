@@ -1,1 +1,3 @@
+default-jre
 chinese*
+fonts-unfonts-core
