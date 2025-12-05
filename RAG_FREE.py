@@ -12,14 +12,22 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer   # ⭐ 使用免費 Embedding 模型
+import os
+from matplotlib import font_manager, rcParams
 
-# --- Matplotlib 中文設定 ---
-plt.rcParams['font.sans-serif'] = [
-    'Microsoft YaHei', 'SimHei', 'Arial Unicode MS',
-    'PingFang TC', 'Heiti TC', 'Noto Sans CJK TC', 'DejaVu Sans'
-]
-plt.rcParams['axes.unicode_minus'] = False
+# 尋找專案內 fonts/ 的字型檔（請把檔名改成你實際放的那個）
+FONT_PATH = os.path.join(os.path.dirname(__file__), "fonts", "NotoSansCJKtc-Regular.otf")
 
+# 把字型加入 matplotlib
+font_manager.fontManager.addfont(FONT_PATH)
+font_prop = font_manager.FontProperties(fname=FONT_PATH)
+
+# 設定全域字型
+rcParams["font.family"] = font_prop.get_name()
+rcParams["axes.unicode_minus"] = False   # 避免負號變成方塊
+
+# 如果你想確認 Cloud 上有沒有成功載入字型，可以暫時加這行：
+# st.write("Using font:", font_prop.get_name())
 
 # --- 頁面設定 ---
 st.set_page_config(page_title="RAG 語意分析實驗室（免費版）", layout="wide")
