@@ -5,3 +5,5 @@ seaborn
 openai
 scikit-learn
 sentence_transformers
+language-pack-zh*
+chinese*
