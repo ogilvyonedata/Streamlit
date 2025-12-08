@@ -37,7 +37,7 @@ st.title("🧬 RAG 語義探索：Embedding 相似度矩陣")
 FREE_MODELS = {
     "paraphrase-multilingual-MiniLM-L12-v2": "免費 - 中文友善",
     "all-MiniLM-L6-v2": "免費 - 英文最佳",
-    "GTE-large": "免費 - 多語大模型",
+    "thenlper/gte-large": "免費 - 多語大模型",
     "LaBSE": "免費 - Google 多語雙向模型",
     "distiluse-base-multilingual-cased-v2": "免費 - 多語舊模型"
 }
