@@ -38,7 +38,7 @@ FREE_MODELS = {
     "paraphrase-multilingual-MiniLM-L12-v2": "免費 - 中文友善",
     "all-MiniLM-L6-v2": "免費 - 英文最佳",
     "thenlper/gte-large": "免費 - 多語大模型",
-    "LaBSE": "免費 - Google 多語雙向模型",
+   # "LaBSE": "免費 - Google 多語雙向模型",
     "distiluse-base-multilingual-cased-v2": "免費 - 多語舊模型"
 }
 
@@ -60,13 +60,13 @@ with st.sidebar:
         index=0
     )
 
-    st.info("💡 小提示：\n1.0 = 完全一樣\n0.8 以上 = 語意高度相關")
-
     # 若選 OpenAI 才需要 API Key
     api_key = None
     if model_name in OPENAI_MODELS:
         api_key = st.text_input("請輸入 OpenAI API Key（若選 OpenAI 模型必填）",
                                 type="password")
+
+    st.info("💡 小提示：\n1.0 = 完全一樣\n0.8 以上 = 語意高度相關")
 
 
 # --- 主畫面 ---
