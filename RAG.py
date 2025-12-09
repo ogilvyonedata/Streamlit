@@ -80,9 +80,9 @@ with st.sidebar:
         ["text-embedding-3-large", "全語言", "付費", "OpenAI 最強 embedding，最佳品質"]
     ], columns=["模型名稱", "語言", "類型", "特點"])
 
-st.markdown("### 📘 模型總覽")
+    st.markdown("### 📘 模型總覽")
 
-st.table(model_df)
+    st.table(model_df)
     st.info("💡 小提示：\n1.0 = 完全一樣\n0.8 以上 = 語意高度相關")
 
 
