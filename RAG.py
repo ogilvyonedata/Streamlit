@@ -40,8 +40,8 @@ FREE_MODELS = {
     "thenlper/gte-large": "免費 - 多語大模型",
    # "LaBSE": "免費 - Google 多語雙向模型",
     "distiluse-base-multilingual-cased-v2": "免費 - 多語舊模型",
-    "BAAI/bge-large-zh",
-    "BAAI/bge-base-zh"
+    "BAAI/bge-large-zh": "免費 - 中文 BGE 大模型（最佳中文語意）",
+    "BAAI/bge-base-zh": "免費 - 中文 BGE 基礎模型（更快）"
 }
 
 OPENAI_MODELS = {
