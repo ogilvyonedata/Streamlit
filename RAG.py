@@ -39,7 +39,9 @@ FREE_MODELS = {
     "all-MiniLM-L6-v2": "免費 - 英文最佳",
     "thenlper/gte-large": "免費 - 多語大模型",
    # "LaBSE": "免費 - Google 多語雙向模型",
-    "distiluse-base-multilingual-cased-v2": "免費 - 多語舊模型"
+    "distiluse-base-multilingual-cased-v2": "免費 - 多語舊模型",
+    "BGE-large-zh",
+    "BGE-base-zh"
 }
 
 OPENAI_MODELS = {
