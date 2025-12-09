@@ -68,21 +68,100 @@ with st.sidebar:
         api_key = st.text_input("請輸入 OpenAI API Key（若選 OpenAI 模型必填）",
                                 type="password")
 
-    # 模型總覽表
-    model_df = pd.DataFrame([
-        ["paraphrase-multilingual-MiniLM-L12-v2", "多語（含中文）", "免費", "多語強、速度快，適合句子語意比較"],
-        ["all-MiniLM-L6-v2", "英文", "免費", "英文效果最佳，中文較弱"],
-        ["thenlper/gte-large", "多語（含中文）", "免費", "大模型，效果佳，適合搜尋與語意排序"],
-        ["distiluse-base-multilingual-cased-v2", "多語", "免費", "較舊但穩定的模型"],
-        ["BAAI/bge-large-zh", "中文", "免費", "中文最強語意模型之一，適合詞語比較"],
-        ["BAAI/bge-base-zh", "中文", "免費", "速度快，效果略低於 large"],
-        ["text-embedding-3-small", "全語言", "付費", "快速、便宜、準確，適合大量查詢"],
-        ["text-embedding-3-large", "全語言", "付費", "OpenAI 最強 embedding，最佳品質"]
-    ], columns=["模型名稱", "語言", "類型", "特點"])
+    # --- 模型資料 ---
+    model_info = [
+        {
+            "模型": "paraphrase-multilingual-MiniLM-L12-v2",
+            "語言": "多語（含中文）",
+            "類型": "免費",
+            "特點": "多語強，適合一般語意比較",
+            "說明": "由多語平行語料訓練，對中文友好，但對新詞較弱。"
+        },
+        {
+            "模型": "all-MiniLM-L6-v2",
+            "語言": "英文",
+            "類型": "免費",
+            "特點": "英文最佳，速度快",
+            "說明": "英語效果最佳，處理非英語會弱一些。"
+        },
+        {
+            "模型": "thenlper/gte-large",
+            "語言": "多語（含中文）",
+            "類型": "免費",
+            "特點": "大型 embedding，語意強",
+            "說明": "多語能力好，適合搜尋與語意排序。"
+        },
+        {
+            "模型": "distiluse-base-multilingual-cased-v2",
+            "語言": "多語",
+            "類型": "免費",
+            "特點": "較舊但穩定",
+            "說明": "多語通用，但性能落後其他新模型。"
+        },
+        {
+            "模型": "BAAI/bge-large-zh",
+            "語言": "中文",
+            "類型": "免費",
+            "特點": "🔥 中文最強語意模型",
+            "說明": "大量中文語料訓練，詞語相似度最適合。"
+        },
+        {
+            "模型": "BAAI/bge-base-zh",
+            "語言": "中文",
+            "類型": "免費",
+            "特點": "中文強，速度更快",
+            "說明": "較小但保有高品質的中文 embedding。"
+        },
+        {
+            "模型": "text-embedding-3-small",
+            "語言": "全語言",
+            "類型": "付費",
+            "特點": "便宜快速",
+            "說明": "OpenAI 最新 embedding，品質遠高於舊版。"
+        },
+        {
+            "模型": "text-embedding-3-large",
+            "語言": "全語言",
+            "類型": "付費",
+            "特點": "⭐ OpenAI 最強 embedding",
+            "說明": "多語高品質語意表示，用於關鍵任務首選。"
+        },
+    ]
 
-    st.markdown("### 📘 模型總覽")
+    df = pd.DataFrame(model_info)
 
-    st.table(model_df)
+    # --- UI: 可折疊區塊 ---
+    with st.expander("📘 模型總覽（點我展開）"):
+        st.markdown("""
+        <style>
+            .small-font {
+                font-size: 12px;
+            }
+            .tooltip {
+                border-bottom: 1px dotted gray;
+                cursor: help;
+            }
+        </style>
+        """, unsafe_allow_html=True)
+    
+        # 建表（包含 tooltip）
+        table_html = "<table style='font-size:12px;'>"
+        table_html += "<tr><th>模型</th><th>語言</th><th>類型</th><th>特點</th></tr>"
+
+        for row in model_info:
+            tooltip = f"<span class='tooltip' title='{row['說明']}'>ℹ</span>"
+            table_html += (
+                f"<tr>"
+                f"<td>{row['模型']} {tooltip}</td>"
+                f"<td>{row['語言']}</td>"
+                f"<td>{row['類型']}</td>"
+                f"<td>{row['特點']}</td>"
+                f"</tr>"
+            )
+
+        table_html += "</table>"
+    st.markdown(table_html, unsafe_allow_html=True)
+
     st.info("💡 小提示：\n1.0 = 完全一樣\n0.8 以上 = 語意高度相關")
 
 
