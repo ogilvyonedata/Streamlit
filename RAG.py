@@ -73,8 +73,8 @@ with st.sidebar:
         ["paraphrase-multilingual-MiniLM-L12-v2", "多語（含中文）", "免費", "多語強、速度快，適合句子語意比較"],
         ["all-MiniLM-L6-v2", "英文", "免費", "英文效果最佳，中文較弱"],
         ["thenlper/gte-large", "多語（含中文）", "免費", "大模型，效果佳，適合搜尋與語意排序"],
-        ["distiluse-base-multilingual-cased-v2", "多語", "免費", "較舊但穩定的模型"],
-        ["BAAI/bge-large-zh", "中文", "免費", "中文最強語意模型之一，適合詞語比較"],
+        #["distiluse-base-multilingual-cased-v2", "多語", "免費", "較舊但穩定的模型"],
+        ["BAAI/bge-large-zh", "中文", "免費", "中文最強語意模型之一，適合詞語比較，可能因記憶體不足導致錯誤"],
         ["BAAI/bge-base-zh", "中文", "免費", "速度快，效果略低於 large"],
         ["text-embedding-3-small", "全語言", "付費", "快速、便宜、準確，適合大量查詢"],
         ["text-embedding-3-large", "全語言", "付費", "OpenAI 最強 embedding，最佳品質"]
