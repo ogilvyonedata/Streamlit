@@ -77,7 +77,7 @@ with st.sidebar:
         ["BAAI/bge-large-zh-v1.5", "中文", "免費", "同 base，但此模型較大，可能因記憶體不足導致錯誤", "~2023年中"],
         ["BAAI/bge-base-zh-v1.5", "中文", "免費", "使用 WuDao, Zhihu, Baike 進行訓練，效果略低於 large", "~2023年中"],
         ["text-embedding-3-small", "全語言", "付費", "大規模網絡爬取數據（Common Crawl類似），多語言弱監督+監督微調，類似ada-002", "2021/9"],
-        ["text-embedding-3-large", "全語言", "付費", "同small，大規模網絡數據預訓練，強調多語言檢索微調", "2021/9")]
+        ["text-embedding-3-large", "全語言", "付費", "同small，大規模網絡數據預訓練，強調多語言檢索微調", "2021/9"]
     ], columns=["模型名稱", "語言", "類型", "說明", "訓練資料估計截止時間"])
 
     st.markdown("### 📘 模型總覽")
