@@ -74,7 +74,7 @@ with st.sidebar:
         ["all-MiniLM-L6-v2", "英文", "免費", "超過10億英文/多語句對（Reddit、STS基準、平行翻譯），無監督預訓練+對比微調", "~2021年（發布時）"],
         ["thenlper/gte-large", "多語（含中文）", "免費", "多階段對比學習數據（英文網頁、弱監督標記對），聚焦MTEB任務優化，未公開具體來源", "~2023年（英文優化發布）"],
         #["distiluse-base-multilingual-cased-v2", "多語", "免費", "較舊但穩定的模型"],
-        ["BAAI/bge-base-zh-v1.5", "中文", "免費", "使用 WuDao, Zhihu, Baike 進行訓練，效果略低於 large", "~2023年中"],
+        ["BAAI/bge-base-zh-v1.5", "中文", "免費", "使用 WuDao, Zhihu, Baidu 進行訓練，效果略低於 large", "~2023年中"],
         ["BAAI/bge-large-zh-v1.5", "中文", "免費", "同 base，但此模型較大，可能因記憶體不足導致錯誤", "~2023年中"],
         ["text-embedding-3-small", "全語言", "付費", "大規模網絡爬取數據（Common Crawl類似），多語言弱監督+監督微調，類似ada-002", "2021/9"],
         ["text-embedding-3-large", "全語言", "付費", "同 small，大規模網絡數據預訓練，強調多語言檢索微調", "2021/9"]
